@@ -5,18 +5,18 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 export default function ThemeSwitch() {
-    const [mounted, setMounted] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const { theme, setTheme } = useTheme();
 
     useEffect(() => {
-        setMounted(true)
+        setIsMounted(true)
     }, []);
-    // const currentTheme = theme === "system" ? systemTheme : theme;
+
     const currentTheme = theme === "light" ? "dark" : "light";
 
     return (
        <>
-        { mounted && 
+        { isMounted && 
             (currentTheme === "light")
             ? 
             (<FaSun className="cursor-pointer text-xl hover:text-amber-500" onClick={() => setTheme(currentTheme)}/>) 
