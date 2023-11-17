@@ -4,8 +4,9 @@ import Link from "next/link";
 import { FaRegThumbsUp } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
 
+export const baseImageUrl = "https://image.tmdb.org/t/p/original"
+
 export default function Card({key, result}: ICard) {
-    const baseImageUrl = "https://image.tmdb.org/t/p/original"
     return (
         <div 
         className="
