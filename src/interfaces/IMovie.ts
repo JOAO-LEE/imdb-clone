@@ -31,6 +31,7 @@ interface IMovie extends IResults {
     video: boolean
     tagline: string
     status: string
+    duration: number
 }
 
 export type { IMovie };
