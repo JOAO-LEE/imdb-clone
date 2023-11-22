@@ -9,6 +9,7 @@ export const baseImageUrl = "https://image.tmdb.org/t/p/original"
 export default function Card({key, result}: ICard) {
     return (
         <div 
+        key={key}
         className="
         cursor-pointer 
         sm:p-3
@@ -25,7 +26,8 @@ export default function Card({key, result}: ICard) {
             <Link href={`/movie/${result.id}`}>
                 <Image 
                 src={`${baseImageUrl}${result.backdrop_path || result.poster_path}`} 
-                alt={`${result.title} image`} width={500} height={500} 
+                alt={`${result.title} image`} 
+                width={500} height={500} 
                 style={{maxWidth: "100%", height: "auto"}}
                 placeholder="blur"
                 blurDataURL="/loading-spinner.svg"
@@ -61,8 +63,8 @@ export default function Card({key, result}: ICard) {
                     dark:text-amber-200"
                     >
                         {result?.release_date?.replaceAll("-", "/") || result?.first_air_date?.replaceAll("-", "/") }
-                    <FaRegThumbsUp className="h-5 mr-1 ml-8"/>{result.vote_count} / 
-                    <FaRegStar className="h-5 mr-1 ml-1" />{result.vote_average.toFixed(2)} 
+                    <FaRegThumbsUp className="mr-1 ml-8"/>{result.vote_count} / 
+                    <FaRegStar className="mr-1 ml-1" />{result.vote_average.toFixed(2)} 
                     </p>    
                 </div>
             </Link>

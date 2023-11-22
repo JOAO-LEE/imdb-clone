@@ -2,7 +2,7 @@ import { baseImageUrl } from "@/components/Card/Card";
 import { IMovie } from "@/interfaces/IMovie";
 import Image from "next/image";
 import { FaRegThumbsUp, FaRegStar } from "react-icons/fa";
-import { BsCameraReelsFill } from "react-icons/bs";
+// import { BsCameraReelsFill } from "react-icons/bs";
 import { LuTimer } from "react-icons/lu";
 
 const API_KEY = process.env.API_KEY;
@@ -15,7 +15,6 @@ const getMovieById = async (movieId: number): Promise<IMovie | undefined> => {
 
 export default async function MoviePage({params: { id }}: { params: {id: number }}) {
     const movie = await getMovieById(id);
-    console.log(movie)
     return (
         <main className="w-full">
             <section className="w-full">
@@ -65,9 +64,6 @@ export default async function MoviePage({params: { id }}: { params: {id: number 
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="w-full">
-                
             </section>
         </main>
     );
